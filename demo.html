@@ -301,13 +301,13 @@
                 var ts=this
 				,tp=$('<div class="dn pr"><p class="bgw o0 pf t0 l0 h100p w100p"></p><div class="datetimepicker pa t0 l0"></div></div>').appendTo($(ts).parent());
                 tp.find('.datetimepicker').datetimepicker({
-                    viewMode:'YYYY-MM-DD'.replace(' ','').replace(/\-/g,'').replace(/\:/g,'').replace(/(.)(\1)+/g,'$2')
+                    viewMode:'YYYY-MM-DD HH:mm'.replace(' ','').replace(/\-/g,'').replace(/\:/g,'').replace(/(.)(\1)+/g,'$2').toUpperCase()
                     ,language:'zh'
                     ,startDate:ts.startDate
                     ,endDate:ts.endDate
                     ,date:new Date
                     ,onOk:function(ev){
-                      ts.value=this.getText('YYYY-MM-DD');
+                      ts.value=this.getText('YYYY-MM-DD HH:mm');
                       ts[ts.name!='endDate'?'startDate':'endDate']=this.getValue();
                       tp.remove()
                     },onClear:function(ev){

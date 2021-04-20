@@ -27,7 +27,7 @@
 <tr><td><b>property(属性)</b></td><td><b>type(类型)</b></td><td><b>description(描述)</b></td></tr>
 <tr><td>baseCls</td><td>String</td><td>base class(主样式)</td></tr>
 <tr><td>language</td><td>String</td><td>'zh'|'en'</td></tr>
-<tr><td>viewMode</td><td>String</td><td>'YM'|'YMD'|'YMDHMS'|'HMS'</td></tr>
+<tr><td>viewMode</td><td>String</td><td>'YM'|'YMD'|'YMDHM'|'YMDHMS'|'HMS'</td></tr>
 <tr><td>startDate</td><td>Date</td><td>start date(起始日期)</td></tr>
 <tr><td>endDate</td><td>Date</td><td>end date(结束日期)</td></tr>
 <tr><td>date</td><td>Date</td><td>initial date(初始值)</td></tr>
@@ -77,5 +77,4 @@ IE8+
 [MIT license](https://github.com/yu02504787/jQuery.DateTimePicker6/blob/main/LICENSE)
 
 ### https://github.com/jiandaoyun/Perfect-DateTimePicker
-(https://github.com/jiandaoyun/Perfect-DateTimePicker)https://github.com/jiandaoyun/Perfect-DateTimePicker
 
