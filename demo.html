@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="jquery.datetimepicker6.min.css"/>
+    <script type="text/javascript" src="jquery-1.11.1.js"></script>
+    <script type="text/javascript" src="jquery.datetimepicker6.min.js"></script>
+    <style type="text/css">
+		.bgw{background:rgba(0,0,0,0)}
+		.dn{display:none}
+		.h100p{height:100%}
+		.l0{left:0}
+		.pa{position:absolute}
+		.pf{position:fixed}
+		.pr{position:relative}
+		.t0{top:0}
+		.w100p{width:100%}
+        #wrapper{
+            width: 780px;
+            margin: auto;
+        }
+        body {
+            font-family: "Helvetica Neue", Helvetica, Tahoma, Arial, "Microsoft YaHei UI","Microsoft YaHei", STXihei, SimSun, sans-serif;
+        }
+        .log-wrapper {
+            float: right;
+        }
+        .log {
+            max-height: 300px;
+            overflow: auto;
+        }
+        .log .log__entry {
+            margin: .1em 0;
+            padding: .1em .2em;
+            border: 1px solid black;
+            white-space: nowrap;
+        }
+
+    </style>
+    <title></title>
+</head>
+<body>
+    <div id="wrapper">
+        <h2>Demo 1.1</h2>
+        <h4>Date + time format</h4>
+        <div>
+            <span>getText(): </span>
+            <span id="date-text1-1"></span>
+        </div>
+        <div>
+            <span>getText('YYYY-MM-DD'): </span>
+            <span id="date-text-ymd1-1"></span>
+        </div>
+        <div>
+            <span>getValue(): </span>
+            <span id="date-value1-1"></span>
+        </div>
+        <div class="log-wrapper">
+            <strong>Triggered events</strong>
+            <button id="clearlog">clear</button>
+            <div id="eventlog" class="log"></div>
+        </div>
+        <div id="demo1-1"></div>
+
+        <h2>Demo 1.2</h2>
+        <h4>Date + time format (without seconds)</h4>
+        <div>
+            <span>getText(): </span>
+            <span id="date-text1-2"></span>
+        </div>
+        <div>
+            <span>getText('YYYY-MM-DD'): </span>
+            <span id="date-text-ymd1-2"></span>
+        </div>
+        <div>
+            <span>getValue(): </span>
+            <span id="date-value1-2"></span>
+        </div>
+        <div id="demo1-2"></div>
+
+
+        <hr>
+        <h2>Demo 2</h2>
+        <h4>Date only (yyyyMMdd)</h4>
+        <div>
+            <span>getText(): </span>
+            <span id="date-text2"></span>
+        </div>
+        <div>
+            <span>getText('YYYY-MM-DD'): </span>
+            <span id="date-text-ymd2"></span>
+        </div>
+        <div>
+            <span>getValue(): </span>
+            <span id="date-value2"></span>
+        </div>
+        <div id="demo2"></div>
+
+
+        <hr>
+        <h2>Demo 3</h2>
+        <h4>Year + month (yyyyMM)</h4>
+        <div>
+            <span>getText(): </span>
+            <span id="date-text3"></span>
+        </div>
+        <div>
+            <span>getText('YYYY-MM-DD'): </span>
+            <span id="date-text-ymd3"></span>
+        </div>
+        <div>
+            <span>getValue(): </span>
+            <span id="date-value3"></span>
+        </div>
+        <div id="demo3"></div>
+
+
+        <hr>
+        <h2>Demo 4.1</h2>
+        <h4>Time only (HHmmss)</h4>
+        <div>
+            <span>getText(): </span>
+            <span id="date-text4-1"></span>
+        </div>
+        <div>
+            <span>getText('YYYY-MM-DD'): </span>
+            <span id="date-text-ymd4-1"></span>
+        </div>
+        <div>
+            <span>getValue(): </span>
+            <span id="date-value4-1"></span>
+        </div>
+        <div id="demo4-1"></div>
+
+        <hr>
+        <h2>Demo 4.2</h2>
+        <h4>Time only (HHmm)</h4>
+        <div>
+            <span>getText(): </span>
+            <span id="date-text4-2"></span>
+        </div>
+        <div>
+            <span>getText('YYYY-MM-DD'): </span>
+            <span id="date-text-ymd4-2"></span>
+        </div>
+        <div>
+            <span>getValue(): </span>
+            <span id="date-value4-2"></span>
+        </div>
+        <div id="demo4-2"></div>
+
+
+        <hr>
+        <h2>Demo 5</h2>
+        <h4>Date range</h4>
+        <div>
+            <span>getText(): </span>
+            <span id="date-text5"></span>
+        </div>
+        <div>
+            <span>getText('YYYY-MM-DD'): </span>
+            <span id="date-text-ymd5"></span>
+        </div>
+        <div>
+            <span>getValue(): </span>
+            <span id="date-value5"></span>
+        </div>
+        <div id="demo5"></div>
+
+
+        <hr>
+        <h2>Demo 6</h2>
+        <h4>First day of week: Monday</h4>
+        <div>
+            <span>getText(): </span>
+            <span id="date-text6"></span>
+        </div>
+        <div>
+            <span>getText('YYYY-MM-DD'): </span>
+            <span id="date-text-ymd6"></span>
+        </div>
+        <div>
+            <span>getValue(): </span>
+            <span id="date-value6"></span>
+        </div>
+        <div id="demo6"></div>
+
+
+        <hr>
+        <h2>Demo 7</h2>
+        <h4>input date range</h4>
+        <div id="demo7">
+            <div>startDate<input name="startDate" /></div><br>
+            <div> endDate <input name="endDate" /></div>
+		</div>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            function logEvent(type, date) {
+                $("<div class='log__entry'/>").hide().html("<strong>"+type + "</strong>: "+date).prependTo($('#eventlog')).show(200);
+            }
+            $('#clearlog').click(function() {
+                $('#eventlog').html('');
+            });
+
+            $('#demo1-1').datetimepicker({
+                //date: new Date(),
+                viewMode: 'YMDHMS',
+                //date selection event
+                onDateChange: function() {
+                    logEvent('onDateChange', this.getValue());
+
+                    $('#date-text1-1').text(this.getText());
+                    $('#date-text-ymd1-1').text(this.getText('YYYY-MM-DD'));
+                    $('#date-value1-1').text(this.getValue());
+                },
+                //clear button click event
+                onClear: function() {
+                    logEvent('onClear', this.getValue());
+                },
+                //ok button click event
+                onOk: function() {
+                    logEvent('onOk', this.getValue());
+                },
+                //close button click event
+                onClose: function() {
+                    logEvent('onClose', this.getValue());
+                }
+            });
+            $('#demo1-2').datetimepicker({
+                date: new Date(),
+                viewMode: 'YMDHM',
+                onDateChange: function(){
+                    $('#date-text1-2').text(this.getText());
+                    $('#date-text-ymd1-2').text(this.getText('YYYY-MM-DD'));
+                    $('#date-value1-2').text(this.getValue());
+                }
+            });
+            $('#demo2').datetimepicker({
+                date: new Date(),
+				language:'zh',
+                viewMode: 'YMD',
+                onDateChange: function(){
+                    $('#date-text2').text(this.getText());
+                    $('#date-text-ymd2').text(this.getText('YYYY-MM-DD'));
+                    $('#date-value2').text(this.getValue());
+                }
+            });
+            $('#demo3').datetimepicker({
+                date: new Date(),
+                viewMode: 'YM',
+                onDateChange: function(){
+                    $('#date-text3').text(this.getText());
+                    $('#date-text-ymd3').text(this.getText('YYYY-MM-DD'));
+                    $('#date-value3').text(this.getValue());
+                }
+            });
+            $('#demo4-1').datetimepicker({
+                date: new Date(),
+                viewMode: 'HMS',
+                onDateChange: function(){
+                    $('#date-text4-1').text(this.getText());
+                    $('#date-text-ymd4-1').text(this.getText('YYYY-MM-DD'));
+                    $('#date-value4-1').text(this.getValue());
+                }
+            });
+            $('#demo4-2').datetimepicker({
+                date: new Date(),
+                viewMode: 'HM',
+                onDateChange: function(){
+                    $('#date-text4-2').text(this.getText());
+                    $('#date-text-ymd4-2').text(this.getText('YYYY-MM-DD'));
+                    $('#date-value4-2').text(this.getValue());
+                }
+            });
+            $('#demo5').datetimepicker({
+                date: new Date(),
+                startDate: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()-8, 0, 0, 0),
+                endDate: new Date(new Date().getFullYear(), new Date().getMonth(), new Date().getDate()+10, 23, 59, 59),
+                viewMode: 'YMDHMS',
+                onDateChange: function(){
+                    $('#date-text5').text(this.getText());
+                    $('#date-text-ymd5').text(this.getText('YYYY-MM-DD'));
+                    $('#date-value5').text(this.getValue());
+                }
+            });
+            $('#demo6').datetimepicker({
+                date: new Date(),
+                firstDayOfWeek: 1,
+                viewMode: 'YMDHMS',
+                onDateChange: function(){
+                    $('#date-text6').text(this.getText());
+                    $('#date-text-ymd6').text(this.getText('YYYY-MM-DD'));
+                    $('#date-value6').text(this.getValue());
+                }
+            });
+            $('#demo7 input').focus(function(){
+				$('.datetimepicker').parent().remove();
+                var ts=this
+				,tp=$('<div class="dn pr"><p class="bgw o0 pf t0 l0 h100p w100p"></p><div class="datetimepicker pa t0 l0"></div></div>').appendTo($(ts).parent());
+                tp.find('.datetimepicker').datetimepicker({
+                    viewMode:'YYYY-MM-DD'.replace(' ','').replace(/\-/g,'').replace(/\:/g,'').replace(/(.)(\1)+/g,'$2')
+                    ,language:'zh'
+                    ,startDate:ts.startDate
+                    ,endDate:ts.endDate
+                    ,date:new Date
+                    ,onOk:function(ev){
+                      ts.value=this.getText('YYYY-MM-DD');
+                      ts[ts.name!='endDate'?'startDate':'endDate']=this.getValue();
+                      tp.remove()
+                    },onClear:function(ev){
+                      ts.value='';
+                      ts[ts.name!='endDate'?'startDate':'endDate']=null;
+                      tp.remove()
+                    }
+                });
+                $(tp).show(64).children().eq(0).click(()=>tp.remove())
+            })
+        });
+    </script>
+</body>
+</html>
